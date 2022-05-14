@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.entity.Product;
+import com.example.demo.entity.Store;
 import com.example.demo.service.ProductServiceI;
 
 @RestController
@@ -51,6 +52,19 @@ public class ProductController {
 			e.printStackTrace();
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
 		}
+	}
+	@GetMapping("/sid")
+	public ResponseEntity<ResponseEntity<Store>> getStoreDetails(){
+		
+		try {
+			ResponseEntity<Store> c=this.service.getStoreDetails();
+			return ResponseEntity.of(Optional.of(c));
+		}
+		catch(Exception e) {
+			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+		}
+		
+		
 	}
 	
 	

@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import com.example.demo.entity.Customer;
 import com.example.demo.entity.OrderInfo;
 import com.example.demo.entity.Product;
+import com.example.demo.entity.Store;
 
 
 public interface OrderServiceI {
@@ -16,5 +17,9 @@ public interface OrderServiceI {
 	public OrderInfo getOrderById(String pid);
 
 	public ResponseEntity<Customer> getCustomerDetails();
+
+	public OrderInfo getOrderDetailsByStatus(String order_status,String oid);
+
+
 
 }

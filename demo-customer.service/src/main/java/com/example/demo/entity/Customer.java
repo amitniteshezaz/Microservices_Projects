@@ -13,7 +13,7 @@ public class Customer {
 	private String phone;
 	private String registeration_Date;
 	private String dob;
-	private String password;
+	private String pwd;
 	
 	public int getCustomer_id() {
 		return customer_id;
@@ -57,14 +57,14 @@ public class Customer {
 	public void setDob(String dob) {
 		this.dob = dob;
 	}
-	public String getPassword() {
-		return password;
+	public String getpwd() {
+		return pwd;
 	}
-	public void setPassword(String password) {
-		this.password = password;
+	public void setpwd(String pwd) {
+		this.pwd = pwd;
 	}
 	public Customer(int customer_id, String last_Name, String first_Name, String email, String phone,
-			String registeration_Date, String dob, String password) {
+			String registeration_Date, String dob, String pwd) {
 		super();
 		this.customer_id = customer_id;
 		this.last_Name = last_Name;
@@ -73,7 +73,7 @@ public class Customer {
 		this.phone = phone;
 		this.registeration_Date = registeration_Date;
 		this.dob = dob;
-		this.password = password;
+		this.pwd = pwd;
 	}
 	public Customer() {
 		super();
@@ -83,7 +83,7 @@ public class Customer {
 	public String toString() {
 		return "Customer [customer_id=" + customer_id + ", last_Name=" + last_Name + ", first_Name=" + first_Name
 				+ ", email=" + email + ", phone=" + phone + ", registeration_Date=" + registeration_Date + ", dob="
-				+ dob + ", password=" + password + "]";
+				+ dob + ", pwd=" + pwd + "]";
 	}
 	
 

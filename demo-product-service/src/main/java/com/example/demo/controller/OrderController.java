@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.entity.Customer;
 import com.example.demo.entity.OrderInfo;
 import com.example.demo.entity.Product;
+import com.example.demo.entity.Store;
 import com.example.demo.service.OrderServiceI;
 import com.example.demo.service.ProductServiceI;
 
@@ -42,16 +44,31 @@ public class OrderController {
 		return ResponseEntity.of(Optional.of(order));
 	}
 	
-	@GetMapping("/")
-	public ResponseEntity<OrderInfo> getCustomerDetails(){
+	@GetMapping("/cid")
+	public ResponseEntity<ResponseEntity<Customer>> getCustomerDetails(){
 		
 		try {
-			this.service.getCustomerDetails();
-			return new ResponseEntity<>(HttpStatus.OK);
+			ResponseEntity<Customer> c=this.service.getCustomerDetails();
+			return ResponseEntity.of(Optional.of(c));
 		}
 		catch(Exception e) {
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
+		
+		
 	}
+	
+	@GetMapping("/getorderdetailsbystatus/{order_status}/oid/{oid}")
+	public ResponseEntity<OrderInfo> CheckOrderDetailsByStatus(@PathVariable String order_status, @PathVariable String oid){
+		try {
+		OrderInfo order=service.getOrderDetailsByStatus(order_status,oid);
+		return ResponseEntity.of(Optional.of(order));
+		}
+		catch(Exception e) {
+			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+			
+		}
+	}
+
 
 }

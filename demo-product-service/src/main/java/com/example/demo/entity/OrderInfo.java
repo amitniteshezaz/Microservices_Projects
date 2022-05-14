@@ -4,12 +4,15 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
 
 
 @Entity
 public class OrderInfo {
 	@Id
 	private int order_id;
+	@NotEmpty
 	private int order_number;
 	private Date date;
 	private String item_details;
@@ -17,6 +20,10 @@ public class OrderInfo {
 	private Long total_value;
 	private String customer_details;
 	private String order_status;
+	// email should be a valid email format
+	// email shouldn't be null or empty
+	@NotEmpty
+	@Email
 	private String customer_email;
 	public int getOrder_id() {
 		return order_id;

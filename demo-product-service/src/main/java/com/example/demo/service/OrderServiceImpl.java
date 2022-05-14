@@ -34,8 +34,13 @@ private final RestTemplate restTemplate;
 	}
 	@Override
 	public ResponseEntity<Customer> getCustomerDetails() {
-		return restTemplate.getForEntity("http://localhost:9090/customer/1",Customer.class);
+		return restTemplate.getForEntity("http://localhost:9091/customer/5",Customer.class);
 		
+	}
+	@Override
+	public OrderInfo getOrderDetailsByStatus(String order_status,String oid) {
+		// TODO Auto-generated method stub
+		return (OrderInfo) repo.getOrderByStatus(order_status,oid);
 	}
 
 }

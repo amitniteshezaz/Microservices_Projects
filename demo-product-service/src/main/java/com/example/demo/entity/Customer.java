@@ -2,6 +2,8 @@ package com.example.demo.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Customer {
@@ -13,6 +15,8 @@ public class Customer {
 	private String phone;
 	private String registeration_Date;
 	private String dob;
+	@NotEmpty
+	@Size(min=8, message="Password should have atleast 8 characters")
 	private String pwd;
 	public int getCustomer_id() {
 		return customer_id;
