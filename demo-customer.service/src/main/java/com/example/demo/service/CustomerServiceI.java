@@ -10,4 +10,6 @@ public interface CustomerServiceI {
 
 	public Customer getCustomerDetailsByCustomerId(String cid);
 
+	public Customer addCustomerDetails(Customer customer);
+
 }

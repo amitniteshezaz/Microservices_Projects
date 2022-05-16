@@ -25,6 +25,13 @@ public class CustomerServiceImpl implements CustomerServiceI{
 		return repo.getOne(Integer.parseInt(cid));
 	}
 
+	@Override
+	public Customer addCustomerDetails(Customer customer) {
+		// TODO Auto-generated method stub
+		return repo.save(customer);
+		
+	}
+
 	
 	
 }

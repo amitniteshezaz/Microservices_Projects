@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+//import com.example.demo.entity.OrderSort;
 import com.example.demo.entity.Product;
 import com.example.demo.entity.Store;
+import com.example.demo.service.OrderServiceI;
 import com.example.demo.service.ProductServiceI;
 
 @RestController
@@ -66,6 +68,22 @@ public class ProductController {
 		
 		
 	}
+	
+//	public ResponseEntity<OrderSort> SortOrderDetailsByLastNameOrderDate(){
+//		try {
+//			OrderSort c=service.getOrderDetailsByLastNameOrderDate();
+//			return ResponseEntity.of(Optional.of(c));
+//		}
+//		catch(Exception e) {
+//			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+//		}
+//		
+//		
+//	}
+	
+		
+		
+	
 	
 	
 

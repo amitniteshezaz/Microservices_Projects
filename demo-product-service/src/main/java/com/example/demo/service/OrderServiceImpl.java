@@ -42,5 +42,16 @@ private final RestTemplate restTemplate;
 		// TODO Auto-generated method stub
 		return (OrderInfo) repo.getOrderByStatus(order_status,oid);
 	}
+	@Override
+	public OrderInfo addOrder(OrderInfo order) {
+		// TODO Auto-generated method stub
+		return repo.save(order);
+	}
+	@Override
+	public void deleteOrderByOrderID(String oid) {
+		OrderInfo order=repo.deleteOrderByOid(oid);
+		repo.delete(order);
+		
+	}
 
 }

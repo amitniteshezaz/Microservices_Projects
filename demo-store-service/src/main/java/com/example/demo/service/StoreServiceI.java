@@ -8,4 +8,6 @@ public interface StoreServiceI{
 
 	public Store getStoreBySid(String sid);
 
+	public Store getStoreDetailsByStoreName(String store_name);
+
 }

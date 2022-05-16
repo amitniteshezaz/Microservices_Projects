@@ -27,4 +27,16 @@ public class StoreController {
 		return ResponseEntity.of(Optional.of(order));
 	}	
 	
+	@GetMapping("/store1/{store_name}")
+	public ResponseEntity<Store> getStoreDetailsByStoreName(@PathVariable String store_name){
+		Store store=service.getStoreDetailsByStoreName(store_name);
+		if(store==null) {
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+		}
+		return ResponseEntity.of(Optional.of(store));
+	}	
+	
+	
+	
+	
 }

@@ -16,5 +16,10 @@ public class StoreServiceImpl implements StoreServiceI{
 		// TODO Auto-generated method stub
 		return repo.getOne(Integer.parseInt(sid));
 	}
+	@Override
+	public Store getStoreDetailsByStoreName(String store_name) {
+		// TODO Auto-generated method stub
+		return repo.getStoreDetailsByStoreName(store_name);
+	}
 
 }

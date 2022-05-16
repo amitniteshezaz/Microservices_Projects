@@ -20,6 +20,10 @@ public interface OrderServiceI {
 
 	public OrderInfo getOrderDetailsByStatus(String order_status,String oid);
 
+	public OrderInfo addOrder(OrderInfo order);
+
+	public void deleteOrderByOrderID(String oid);
+
 
 
 }

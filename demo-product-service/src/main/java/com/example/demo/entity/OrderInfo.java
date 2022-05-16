@@ -12,7 +12,7 @@ import javax.validation.constraints.NotEmpty;
 public class OrderInfo {
 	@Id
 	private int order_id;
-	@NotEmpty
+	//@NotEmpty
 	private int order_number;
 	private Date date;
 	private String item_details;
@@ -22,8 +22,8 @@ public class OrderInfo {
 	private String order_status;
 	// email should be a valid email format
 	// email shouldn't be null or empty
-	@NotEmpty
-	@Email
+	//@NotEmpty
+	//@Email
 	private String customer_email;
 	public int getOrder_id() {
 		return order_id;

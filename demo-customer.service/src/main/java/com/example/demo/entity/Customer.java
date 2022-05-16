@@ -1,11 +1,19 @@
 package com.example.demo.entity;
 
+import javax.annotation.Generated;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Customer {
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	
 	private int customer_id;
 	private String last_Name;
 	private String first_Name;
@@ -14,6 +22,11 @@ public class Customer {
 	private String registeration_Date;
 	private String dob;
 	private String pwd;
+	
+	
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="fk_add_id")
+	private CustomerAdress address;
 	
 	public int getCustomer_id() {
 		return customer_id;
@@ -63,8 +76,15 @@ public class Customer {
 	public void setpwd(String pwd) {
 		this.pwd = pwd;
 	}
+	
+	public CustomerAdress getAddress() {
+		return address;
+	}
+	public void setAddress(CustomerAdress address) {
+		this.address = address;
+	}
 	public Customer(int customer_id, String last_Name, String first_Name, String email, String phone,
-			String registeration_Date, String dob, String pwd) {
+			String registeration_Date, String dob, String pwd, CustomerAdress address) {
 		super();
 		this.customer_id = customer_id;
 		this.last_Name = last_Name;
@@ -74,6 +94,7 @@ public class Customer {
 		this.registeration_Date = registeration_Date;
 		this.dob = dob;
 		this.pwd = pwd;
+		this.address = address;
 	}
 	public Customer() {
 		super();
@@ -83,7 +104,7 @@ public class Customer {
 	public String toString() {
 		return "Customer [customer_id=" + customer_id + ", last_Name=" + last_Name + ", first_Name=" + first_Name
 				+ ", email=" + email + ", phone=" + phone + ", registeration_Date=" + registeration_Date + ", dob="
-				+ dob + ", pwd=" + pwd + "]";
+				+ dob + ", pwd=" + pwd + ", address=" + address + "]";
 	}
 	
 
